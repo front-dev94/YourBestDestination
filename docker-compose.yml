@@ -1,0 +1,14 @@
+version: '3'
+services:
+  yourbestdestination-api:
+    build: .
+    ports:
+      - "7140:7140"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:7140
+    networks:
+      - mynetwork
+networks:
+  mynetwork:
+    driver: bridge
