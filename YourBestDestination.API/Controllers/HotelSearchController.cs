@@ -18,9 +18,6 @@ namespace YourBestDestination.API.Controllers
         [HttpGet("hotels/closest", Name = "GetClosestLocations")]
         public async Task<IActionResult> GetClosestLocations([FromQuery] double latitude, double longitude, int? page = null, int? size = null)
         {
-            if (latitude == 0 || longitude == 0)
-                return BadRequest("Latitude and longitude parameters cannot be zero");
-
             if (double.IsNaN(latitude) || double.IsNaN(longitude))
                 return BadRequest("Latitude and longitude parameters cannot be empty");
 
